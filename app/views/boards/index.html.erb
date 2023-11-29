@@ -38,6 +38,15 @@
       <a href="/boards/<%= a_board.id %>">
         <%= a_board.name %>
       </a>
+
+      <div>
+        <% matching_users = User.where({ :id => a_board.user_id }) %>
+        <% the_user = matching_users.first %>
+        Owner: <%= the_user.email %>
+      </div>
+
+      <hr>
+      
     </li>
   <% end %>
 </ul>
